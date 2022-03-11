@@ -1,7 +1,6 @@
-import pyarrow as pa
 from pyarrow import flight
 
-client = pa.flight.connect('grpc+tls://flight.spiceai.io')
+client = flight.connect('grpc+tls://flight.spiceai.io')
 
 headers = [client.authenticate_basic_token('', 'API_KEY')]
 options = flight.FlightCallOptions(headers=headers)
