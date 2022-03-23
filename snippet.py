@@ -13,7 +13,6 @@ if not Path('/usr', 'share', 'grpc', 'roots.pem').exists():
         tls_root_certs = './roots.pem'
         if not Path(tls_root_certs).exists():
             print('Downloading gRPC certificates')
-            # Do not verify certs for https (Mac issue)
             ssl._create_default_https_context = ssl._create_unverified_context
             urllib.request.urlretrieve('https://pki.google.com/roots.pem', tls_root_certs)
         os.environ[env_name] = tls_root_certs
