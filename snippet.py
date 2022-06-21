@@ -1,4 +1,4 @@
-# Install with: pip install git+https://github.com/spiceai/spice-py
+# Install with: pip install git+https://github.com/spiceai/spicepy
 from spicepy import Client
 
 client = Client('API_KEY')
